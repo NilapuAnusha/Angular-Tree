@@ -1,0 +1,59 @@
+<div class="container" ng-controller="mainCtrl">
+	<h2>Static Tree Example</h2>
+	<div class="row">
+		<div class="col-lg-6">
+			<div ui-tree class="well">
+			  <ol ui-tree-nodes="" ng-model="treeData">
+			    <li ng-repeat="info in treeData" ui-tree-node>
+			      <div ui-tree-handle class="tree-name">
+			        <h4><span class="glyphicon glyphicon-tree-deciduous"></span>
+			        <a href class="node-link">{{treeName}}
+			        </a></h4>
+			      </div>
+			      <ol ui-tree-nodes="" ng-model="info.nodesList">
+			  	     <li ng-repeat="parent in info.nodesList" ui-tree-node>
+			          <div ui-tree-handle class="tree-node tree-node-content">
+			           <img src="img/node.png" class="left-handle" ng-hide="" alt="some_text">
+			          <a class="btn btn-default btn-xs tree-button" nodrag ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-plus': collapsed, 'glyphicon-minus': !collapsed}"></span></a>
+			            <span class="node-name">
+			            	<a class="node-link">
+				            	<span>{{parent.parentId}}</span>
+			            	</a>
+			            </span>
+			          </div>
+			          <ol ng-if="parent.child.length" ui-tree-nodes="parent.parentId.collapsed" ng-model="parent.child" ng-class="{hidden: collapsed}">
+					        <li ng-repeat="child in parent.child" ui-tree-node>
+					          <div ui-tree-handle class="tree-node tree-node-content tree-child-button">
+					          <img src="img/handle.png" class="branch" alt="some_text" ng-hide="info.nodesList.indexOf(parent) == info.nodesList.length - 1">
+					          <img src="img/node.png" class="left-handle" alt="some_text" ng-class="{'leaf-handle-child-last' : info.nodesList.indexOf(parent) == info.nodesList.length - 1}">
+					          <a class="btn btn-default btn-xs tree-button " nodrag ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-plus': collapsed, 'glyphicon-minus': !collapsed}"></span></a>
+					            <span class="node-name">
+					            	<a class="node-link">{{child.childId}}
+					            	</a>
+					            </span>
+					          </div>
+					          <ol ng-if="child.subchild.length" ui-tree-nodes="child.subchild" ng-model="child.subchild" ng-class="{hidden: collapsed}">
+							        <li ng-repeat="subchild in child.subchild" ui-tree-node>
+							          <div ui-tree-handle class="tree-node tree-node-content tree-child-button">
+							          <img src="img/handle.png" ng-hide="info.nodesList.indexOf(parent) == info.nodesList.length - 1" class="branch leaf-handle-parent" alt="some_text">
+							          <img src="img/handle.png" ng-hide="parent.child.indexOf(child) == parent.child.length - 1" class="branch leaf-handle-child" alt="some_text">
+							          <img src="img/node.png" class="left-handle leaf-node" ng-class="{'leaf-node-last' : info.nodesList.indexOf(parent) == info.nodesList.length - 1}" alt="some_text">
+							          <a class="btn btn-default btn-xs tree-button " nodrag ng-click="toggle(this)"><span class="glyphicon" ng-class="{'glyphicon-plus': collapsed, 'glyphicon-minus': !collapsed}"></span></a>
+							            <span class="node-name">
+							            	<a class="node-link">
+							            		{{subchild.childId}}
+							            	</a>
+							            </span>
+							          </div>
+							        </li>
+							      </ol>
+					        </li>
+					      </ol>
+			        </li>
+			      </ol>
+			    </li>
+			  </ol>
+			</div>
+		</div>
+	</div>
+</div>

@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en" data-ng-app="demoApp">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<title>Demo Application</title>
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
+		<link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap-theme.css">
+	<link rel="stylesheet" href="bower_components/angular-ui-tree/dist/angular-ui-tree.min.css">
+	<link rel="stylesheet" href="css/custom.css">
+	<style>
+      body {
+        padding-top: 60px; 
+        padding-bottom: 100px;/* 60px to make the container go all the way to the bottom of the topbar */
+      }
+    </style>
+<!-- 	<link href="css/bootstrap-responsive.css" rel="stylesheet"> -->
+</head>
+<body>
+	<div class="navbar navbar-default navbar-fixed-top">
+		<div class="container-fluid">
+    <!-- Brand and toggle get grouped for better mobile display -->
+    	<div class="navbar-header">
+				<a class="navbar-brand" href="/#/">Tree structure</a>
+			</div>
+		</div>
+	</div>
+
+
+	<div data-ng-view class="container"></div>
+	<script src="bower_components/jquery/dist/jquery.min.js"></script>
+	<script src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+	<script src="bower_components/angular/angular.js"></script>
+	<script src="bower_components/angular-route/angular-route.min.js"></script>
+	<script src="bower_components/angular-resource/angular-resource.min.js"></script>
+	<script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+	<script src="bower_components/angular-ui-tree/dist/angular-ui-tree.min.js"></script>
+	<script src="js/app.js"></script>
+	<script src="js/mainCtrl.js"></script>
+</body>
+</html>

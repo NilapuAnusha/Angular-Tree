@@ -1,0 +1,51 @@
+/********** tree structure ************/
+ .tree-child-button {
+ 	margin-left: 30px;
+ }
+ .tree-button {
+ 	font-size: 6px;
+ 	margin-top: 22px;
+	margin-left: -8px;
+ }
+
+ .tree-branch {
+ 	background-image: url("../img/branch.png");
+ }
+ .left-handle{
+ 		margin-top: -5px;
+ }
+ .node-name{
+ 	top:10px;
+ 	position: relative;
+ }
+ .branch{
+ 	margin-left: -50px;
+	margin-right: 3px;
+	margin-top: -2px;
+ }
+ .leaf-node{
+ 	margin-left: 22px;
+ }
+ .leaf-node-last{
+ 	margin-left: -1px;
+ }
+ .leaf-handle-child{
+ 	margin-left: -13px;
+	margin-right: -20px;
+ }
+ .leaf-handle-child-last {
+ 		margin-left: -14px;
+		margin-right: -3px;
+ }
+ .leaf-handle-parent{
+	margin-left: -70px;
+	margin-right: 16px;
+ }
+ .node-link, .node-link a:hover {
+ 	color: #333;
+	text-decoration: none;
+	cursor: pointer;
+ }
+ .tree-name{
+ 	margin-left:13px;
+ }
